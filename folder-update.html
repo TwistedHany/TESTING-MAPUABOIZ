@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-page="folder-update">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folder Update · Inspection Record System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <div class="profile">
+        <img class="profile__avatar" data-user="avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="44" height="44">
+        <div class="profile__text">
+          <p class="profile__role" data-user="role"></p>
+          <p class="profile__name" data-user="name"></p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-labelledby="nav-heading">
+        <p class="nav__heading" id="nav-heading">Main</p>
+        <ul class="nav__list" data-nav></ul>
+      </nav>
+
+      <div class="sidebar__footer">
+        <a class="logout" href="index.html" data-action="logout">
+          <i class="icon" data-icon="log-out" aria-hidden="true"></i>
+          <span class="nav__label">Logout Account</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="icon-btn" data-action="toggle-sidebar" aria-controls="sidebar" aria-expanded="true" aria-label="Toggle sidebar">
+          <i class="icon" data-icon="panel-left" aria-hidden="true"></i>
+        </button>
+
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb__item" aria-current="page">Folder Update</li>
+          </ol>
+        </nav>
+
+        <div class="topbar__actions">
+          <button type="button" class="icon-btn" data-action="toggle-theme" aria-pressed="false" aria-label="Switch to dark mode">
+            <i class="icon" data-icon="moon" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" class="icon-btn" data-action="toggle-history" aria-controls="history" aria-expanded="false" aria-label="History">
+            <i class="icon" data-icon="history" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" class="icon-btn" data-action="toggle-history" aria-controls="history" aria-expanded="false" aria-label="Toggle side panel">
+            <i class="icon" data-icon="panel-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="content" id="content">
+        <header class="page-header">
+          <div>
+            <h1 class="page-header__title">Folder Update</h1>
+            <p class="page-header__desc">Search a case number to open its folder: franchise information and operator information, side by side.</p>
+          </div>
+        </header>
+
+        <div class="split folder-layout" data-split>
+          <div class="split__list">
+            <form class="folder-search" role="search" data-search-form>
+              <label class="visually-hidden" for="folder-search">Case number</label>
+              <input class="input folder-search__input" id="folder-search" name="q" type="search" autocomplete="off" placeholder="Enter case number">
+            </form>
+
+            <div class="folder-results__head">
+              <span class="mono-label">Search results</span>
+              <span class="folder-results__count" data-results-count></span>
+            </div>
+
+            <ul class="list" data-results-list aria-label="Search results"></ul>
+          </div>
+
+          <section class="detail" aria-live="polite">
+            <div class="empty-state" data-empty>
+              <span class="empty-state__icon" aria-hidden="true">
+                <i class="icon" data-icon="folder-open"></i>
+              </span>
+              <p class="empty-state__text">Search a case number to open its folder</p>
+            </div>
+
+            <form class="folder" data-folder hidden novalidate aria-labelledby="folder-title">
+              <header class="card--arc folder-head">
+                <div class="folder-head__main">
+                  <p class="mono-label">Folder</p>
+
+                  <div class="folder-head__title-row">
+                    <h2 class="folder-head__title" id="folder-title" data-field="caseNumber"></h2>
+                    <span class="folder-head__sub" data-field="operator.name"></span>
+                  </div>
+
+                  <p class="folder-head__status" data-dirty-status hidden>Unsaved changes</p>
+                </div>
+
+                <div class="folder-head__actions">
+                  <button type="button" class="btn-link folder-head__discard" data-action="discard-folder" hidden>Discard changes</button>
+                  <button type="button" class="btn btn--outline btn--folder" data-action="print-folder">Print folder</button>
+                  <button type="submit" class="btn btn--primary btn--folder" data-action="save-folder" disabled>Save changes</button>
+                </div>
+              </header>
+
+              <div class="folder-grid">
+                <section class="folder-card" aria-labelledby="fu-franchise-title">
+                  <h3 class="folder-card__title" id="fu-franchise-title">
+                    <span class="folder-card__num" aria-hidden="true">1</span>
+                    Franchise information
+                  </h3>
+
+                  <dl class="folder-kv-grid">
+                    <div class="folder-kv">
+                      <dt class="mono-label">Case number</dt>
+                      <dd class="folder-kv__value" data-field="caseNumber"></dd>
+                    </div>
+
+                    <div class="folder-kv">
+                      <dt class="mono-label">Denomination</dt>
+                      <dd class="folder-kv__value" data-field="denomination"></dd>
+                    </div>
+
+                    <div class="folder-kv">
+                      <dt class="mono-label">Sub-denomination</dt>
+                      <dd class="folder-kv__value" data-field="subDenomination"></dd>
+                    </div>
+
+                    <div class="folder-kv">
+                      <dt class="mono-label">No. of units</dt>
+                      <dd class="folder-kv__value" data-field="unitCount"></dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--edit" data-edit-field="dateGranted">
+                      <dt class="mono-label">
+                        <label for="fu-dateGranted">Date granted</label>
+                        <span class="edited-tag" data-edited-tag hidden>Edited</span>
+                      </dt>
+                      <dd>
+                        <input class="folder-input" id="fu-dateGranted" name="dateGranted" type="date" required aria-describedby="fu-dateGranted-error">
+                        <p class="field-error" id="fu-dateGranted-error" data-error-for="dateGranted" hidden></p>
+                      </dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--edit" data-edit-field="dateExpiry">
+                      <dt class="mono-label">
+                        <label for="fu-dateExpiry">Date expiry</label>
+                        <span class="edited-tag" data-edited-tag hidden>Edited</span>
+                      </dt>
+                      <dd>
+                        <input class="folder-input" id="fu-dateExpiry" name="dateExpiry" type="date" required aria-describedby="fu-dateExpiry-error">
+                        <p class="field-error" id="fu-dateExpiry-error" data-error-for="dateExpiry" hidden></p>
+                      </dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--upper">
+                      <dt class="mono-label">Route</dt>
+                      <dd class="folder-kv__value" data-field="route"></dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--upper">
+                      <dt class="mono-label">Franchise status</dt>
+                      <dd class="folder-kv__value" data-field="status"></dd>
+                    </div>
+                  </dl>
+                </section>
+
+                <section class="folder-card" aria-labelledby="fu-operator-title">
+                  <h3 class="folder-card__title" id="fu-operator-title">
+                    <span class="folder-card__num" aria-hidden="true">2</span>
+                    Operator information
+                  </h3>
+
+                  <dl class="folder-kv-stack">
+                    <div class="folder-kv folder-kv--name">
+                      <dt class="mono-label">Operator name</dt>
+                      <dd class="folder-kv__value" data-field="operator.name"></dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--edit" data-edit-field="address">
+                      <dt class="mono-label">
+                        <label for="fu-address">Address</label>
+                        <span class="edited-tag" data-edited-tag hidden>Edited</span>
+                      </dt>
+                      <dd>
+                        <textarea class="folder-input folder-input--area" id="fu-address" name="address" rows="2" maxlength="200" required aria-describedby="fu-address-error"></textarea>
+                        <p class="field-error" id="fu-address-error" data-error-for="address" hidden></p>
+                      </dd>
+                    </div>
+
+                    <div class="folder-kv folder-kv--edit" data-edit-field="contactNumber">
+                      <dt class="mono-label">
+                        <label for="fu-contactNumber">Contact number</label>
+                        <span class="edited-tag" data-edited-tag hidden>Edited</span>
+                      </dt>
+                      <dd>
+                        <input class="folder-input folder-input--mono" id="fu-contactNumber" name="contactNumber" type="tel" inputmode="tel" autocomplete="off" placeholder="0917-441-2280" required aria-describedby="fu-contactNumber-error">
+                        <p class="field-error" id="fu-contactNumber-error" data-error-for="contactNumber" hidden></p>
+                      </dd>
+                    </div>
+
+                    <div class="folder-kv">
+                      <dt class="mono-label">Company name</dt>
+                      <dd class="folder-kv__value" data-field="operator.company"></dd>
+                    </div>
+                  </dl>
+                </section>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <aside class="history" id="history" aria-labelledby="history-title">
+      <h2 class="history__title" id="history-title">History</h2>
+      <ol class="history__list" data-history-list></ol>
+    </aside>
+  </div>
+</body>
+</html>

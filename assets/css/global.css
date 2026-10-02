@@ -1,0 +1,92 @@
+:root {
+  --navy-900: #050a24;
+  --navy-800: #0c1749;
+  --navy-700: #0d2149;
+  --navy-600: #1a2d5a;
+
+  --bg-app: #f4f7fe;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f9fafb;
+  --bg-muted: #f3f4f6;
+  --bg-selected: #f4f7fe;
+
+  --text-strong: #111827;
+  --text: #1f2937;
+  --text-body: #374151;
+  --text-muted: #6b7280;
+  --text-faint: #9aa3b5;
+  --text-label: #5b6478;
+
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --border-input: #d9dde3;
+  --divider-top: #bfbfbf;
+
+  --blue-600: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-400: #5b8def;
+  --blue-100: #dde8fa;
+  --blue-50: #e8f0fd;
+  --focus-ring: #cfe3fb;
+
+  color-scheme: light;
+  --heading: var(--navy-700);
+  --primary: var(--navy-700);
+  --primary-hover: var(--navy-600);
+  --on-primary: #ffffff;
+  --arc: var(--navy-700);
+  --outline-strong: var(--navy-700);
+  --border-emphasis: #9ca3af;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: var(--text);
+  --topbar-bg: #ffffff;
+  --bg-pill: #ececec;
+  --badge-gray-bg: #e5e7eb;
+  --notice-title: #7a3b00;
+  --notice-meta: #d6b98a;
+  --yellow-border: #f2c96a;
+  --tooltip-bg: #1e1b2e;
+  --tooltip-fg: #ffffff;
+  --chart-card-bg: linear-gradient(180deg, #f7f7f7 0%, #f9f9f9 100%);
+  --chart-line: var(--navy-700);
+  --chart-series: #3f3f46;
+  --chart-area-top: rgba(214, 214, 222, 0.9);
+  --chart-area-bottom: rgba(247, 247, 247, 0);
+  --overlay: rgba(5, 10, 36, 0.35);
+  --modal-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-alt: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --fs-2xs: 0.625rem;
+  --fs-xs: 0.6875rem;
+  --fs-sm: 0.75rem;
+  --fs-base-sm: 0.8125rem;
+  --fs-md: 0.875rem;
+  --fs-lg: 1rem;
+  --fs-xl: 1.125rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-3xl: 28px;
+  --r-pill: 999px;
+
+  --shadow-card: 0 6px 16px rgba(15, 23, 42, 0.12);
+  --shadow-soft: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-main: 0 0 0 1px rgba(15, 23, 42, 0.04), 4px 0 18px rgba(15, 23, 42, 0.06);
+
+  --sidebar-w: 256px;
+  --sidebar-w-collapsed: 92px;
+  --history-w: 272px;
+  --topbar-h: 64px;
+  --content-pad-x: 28px;
+  --content-pad-y: 28px;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 200ms;
+}
