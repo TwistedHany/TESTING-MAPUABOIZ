@@ -1,6 +1,4 @@
-.login-page {
-  background: var(--bg-app);
-}
+.login-page { background: var(--bg-app); }
 
 .login {
   display: grid;
@@ -9,26 +7,83 @@
 }
 
 .login__hero {
+  --px: min(100vw / 1440, 100vh / 1042);
+  --hero-bg:
+    radial-gradient(106.5% 55.5% at -19.3% 17.9%, rgba(42, 89, 255, 0.27) 0%, rgba(42, 89, 255, 0) 100%),
+    radial-gradient(64.2% 54.2% at 93.2% 81.6%, rgba(15, 29, 92, 1) 0%, rgba(15, 29, 92, 0) 100%),
+    linear-gradient(72deg, #050922 0%, #070d2c 25%, #070e31 50%, #060b28 75%, #050a25 100%);
   position: relative;
   display: flex;
-  align-items: center;
-  padding: 0 clamp(32px, 5.5vw, 80px);
+  align-items: flex-start;
+  padding: 0 calc(76 * var(--px));
   overflow: hidden;
-  background:
-    radial-gradient(60% 45% at 18% 88%, rgba(22, 36, 110, 0.85) 0%, rgba(22, 36, 110, 0) 100%),
-    radial-gradient(55% 40% at 95% 8%, rgba(20, 34, 104, 0.9) 0%, rgba(20, 34, 104, 0) 100%),
-    linear-gradient(90deg, var(--navy-900) 0%, #0a1240 60%, var(--navy-800) 100%);
+  background: var(--hero-bg);
+}
+
+.login__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-bg);
+  opacity: 0.45;
+}
+
+.login__logo {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.login__logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.login__logo--ltfrb {
+  top: calc(-123 * var(--px));
+  left: calc(-234 * var(--px));
+  width: calc(558 * var(--px));
+}
+
+.login__logo--ltfrb .login__logo-placeholder {
+  padding: calc(110 * var(--px)) 0 0 calc(230 * var(--px));
+}
+
+.login__logo--dotr {
+  right: calc(-113 * var(--px));
+  bottom: calc(-57 * var(--px));
+  width: calc(429 * var(--px));
+}
+
+.login__logo-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-alt);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .login__tagline {
-  max-width: 540px;
-  margin-top: 18vh;
+  position: relative;
+  max-width: 9.65em;
+  margin-top: calc(469 * var(--px));
   font-family: var(--font-alt);
-  font-size: clamp(2rem, 3.9vw, 3.5rem);
+  font-size: calc(56 * var(--px));
   font-style: italic;
   font-weight: 300;
-  line-height: 1.12;
-  background: linear-gradient(180deg, #f2f4ff 0%, #b9bfdf 45%, #5d6694 100%);
+  line-height: 1.2;
+  background: linear-gradient(180deg, #e6ebff 0%, #74798c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -48,21 +103,16 @@
 }
 
 .login-form__title {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   text-align: center;
-  font-size: 1.625rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
   font-weight: 600;
   color: var(--text-strong);
 }
 
 .login-form__field + .login-form__field {
   margin-top: 20px;
-}
-
-.login-form__label-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
 }
 
 .login-form__label {
@@ -72,21 +122,12 @@
   color: var(--text-body);
 }
 
-.login-form__link {
-  font-size: var(--fs-lg);
-  color: var(--blue-600);
-}
-
-.login-form__link:hover {
-  text-decoration: underline;
-}
-
 .login-form__input {
   width: 100%;
   height: 48px;
   padding: 0 16px;
   background: var(--bg-app);
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-md);
   font-family: var(--font-alt);
   font-size: var(--fs-md);
@@ -100,8 +141,8 @@
 
 .login-form__input:focus {
   outline: none;
-  border-color: var(--blue-400);
-  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 2px var(--focus-ring);
 }
 
 .login-form__input[aria-invalid="true"] {
@@ -168,12 +209,12 @@
   }
 
   .login__hero {
+    --px: min(100vw / 1440, 0.36px);
     min-height: 220px;
-    padding: 40px 24px;
+    padding: 0 24px 40px;
   }
 
   .login__tagline {
-    margin-top: 0;
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
   }
 }

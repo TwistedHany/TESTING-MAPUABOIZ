@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard · Inspection Record System</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<<<<<<< Updated upstream
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
@@ -14,22 +14,20 @@
 
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/dashboard.css">
+=======
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <!-- Access Control -->
+  <script src="assets/js/pages/dashboard-records.js" defer></script>
+  <script src="assets/js/pages/dashboard.js" defer></script>
+>>>>>>> Stashed changes
 </head>
-
 <body>
   <div class="app is-history-open">
-
     <aside class="sidebar" id="sidebar" aria-label="Sidebar">
       <div class="profile">
-        <img
-          class="profile__avatar"
-          data-user="avatar"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          alt=""
-          width="44"
-          height="44"
-        >
-
+        <img class="profile__avatar" data-user="avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="44" height="44">
         <div class="profile__text">
           <p class="profile__role" data-user="role"></p>
           <p class="profile__name" data-user="name"></p>
@@ -51,57 +49,24 @@
 
     <div class="main">
       <header class="topbar">
-        <button
-          type="button"
-          class="icon-btn"
-          data-action="toggle-sidebar"
-          aria-controls="sidebar"
-          aria-expanded="true"
-          aria-label="Toggle sidebar"
-        >
+        <button type="button" class="icon-btn" data-action="toggle-sidebar" aria-controls="sidebar" aria-expanded="true" aria-label="Toggle sidebar">
           <i class="icon" data-icon="panel-left" aria-hidden="true"></i>
         </button>
-
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb__item">Dashboards</li>
-            <li class="breadcrumb__sep" aria-hidden="true">/</li>
-            <li class="breadcrumb__item" aria-current="page">
-              Inspection Record System
-            </li>
+          <li class="breadcrumb__item">Dashboards</li>
+          <li class="breadcrumb__sep" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page" data-dash-crumb>Inspection Record System</li>
           </ol>
         </nav>
-
         <div class="topbar__actions">
-          <button
-            type="button"
-            class="icon-btn"
-            data-action="toggle-theme"
-            aria-pressed="false"
-            aria-label="Switch to dark mode"
-          >
+          <button type="button" class="icon-btn" data-action="toggle-theme" aria-pressed="false" aria-label="Switch to dark mode">
             <i class="icon" data-icon="moon" aria-hidden="true"></i>
           </button>
-
-          <button
-            type="button"
-            class="icon-btn"
-            data-action="toggle-history"
-            aria-controls="history"
-            aria-expanded="false"
-            aria-label="History"
-          >
+          <button type="button" class="icon-btn" data-action="toggle-history" aria-controls="history" aria-expanded="false" aria-label="History">
             <i class="icon" data-icon="history" aria-hidden="true"></i>
           </button>
-
-          <button
-            type="button"
-            class="icon-btn"
-            data-action="toggle-history"
-            aria-controls="history"
-            aria-expanded="false"
-            aria-label="Toggle side panel"
-          >
+          <button type="button" class="icon-btn" data-action="toggle-history" aria-controls="history" aria-expanded="false" aria-label="Toggle side panel">
             <i class="icon" data-icon="panel-right" aria-hidden="true"></i>
           </button>
         </div>
@@ -109,214 +74,168 @@
 
       <main class="content" id="content">
         <div class="dash-toolbar">
-          <div
-            class="dropdown dash-toolbar__switch"
-            data-dropdown
-            id="dashboard-switch"
-          >
-            <button
-              type="button"
-              class="dropdown__toggle"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-            >
+          <div class="dropdown dash-toolbar__switch" data-dropdown id="dashboard-switch">
+            <button type="button" class="dropdown__toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose dashboard">
               <span data-dropdown-label>IRS Dashboard</span>
               <i class="icon" data-icon="chevron-down" aria-hidden="true"></i>
             </button>
-
-            <ul
-              class="dropdown__menu dropdown__menu--start"
-              role="listbox"
-              hidden
-            ></ul>
+            <ul class="dropdown__menu dropdown__menu--start" role="listbox" hidden></ul>
           </div>
-
-          <div
-            class="dropdown dash-toolbar__range"
-            data-dropdown
-            id="dashboard-range"
-          >
-            <button
-              type="button"
-              class="dropdown__toggle"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-            >
+          <div class="dropdown dash-toolbar__range" data-dropdown id="dashboard-range">
+            <button type="button" class="dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
               <span data-dropdown-label>Today</span>
               <i class="icon" data-icon="chevron-down" aria-hidden="true"></i>
             </button>
-
             <ul class="dropdown__menu" role="listbox" hidden></ul>
           </div>
         </div>
 
-        <section class="stats" aria-label="Summary">
-          <article class="stat-card">
-            <h2 class="stat-card__label">Apprehended Unit</h2>
-            <p class="stat-card__value" data-stat="apprehended"></p>
-          </article>
+        <div class="dash-view" id="view-irs" data-dash-view="irs">
+          <section class="stats" aria-label="Summary">
+            <article class="stat-card">
+              <h2 class="stat-card__label">Apprehended Unit</h2>
+              <p class="stat-card__value" data-stat="apprehended"></p>
+            </article>
+            <article class="stat-card">
+              <h2 class="stat-card__label">Paid Units</h2>
+              <p class="stat-card__value" data-stat="paid"></p>
+            </article>
+            <article class="stat-card">
+              <h2 class="stat-card__label">Unpaid Units</h2>
+              <p class="stat-card__value" data-stat="unpaid"></p>
+            </article>
+            <article class="stat-card">
+              <h2 class="stat-card__label">Impound</h2>
+              <p class="stat-card__value" data-stat="impound"></p>
+            </article>
+          </section>
 
-          <article class="stat-card">
-            <h2 class="stat-card__label">Paid Units</h2>
-            <p class="stat-card__value" data-stat="paid"></p>
-          </article>
-
-          <article class="stat-card">
-            <h2 class="stat-card__label">Unpaid Units</h2>
-            <p class="stat-card__value" data-stat="unpaid"></p>
-          </article>
-
-          <article class="stat-card">
-            <h2 class="stat-card__label">Impound</h2>
-            <p class="stat-card__value" data-stat="impound"></p>
-          </article>
-        </section>
-
-        <section
-          class="chart-card chart-card--line"
-          aria-labelledby="amount-title"
-        >
-          <header class="chart-card__header">
-            <h2 class="chart-card__title" id="amount-title">
-              Total Amount Collected
-            </h2>
-
-            <div
-              class="dropdown dropdown--pill"
-              data-dropdown
-              id="amount-range"
-            >
-              <button
-                type="button"
-                class="dropdown__toggle"
-                aria-haspopup="listbox"
-                aria-expanded="false"
-              >
+          <section class="chart-card chart-card--line" aria-labelledby="amount-title">
+            <header class="chart-card__header">
+              <h2 class="chart-card__title" id="amount-title">Total Amount Collected</h2>
+              <div class="dropdown dropdown--pill" data-dropdown id="amount-range">
+              <button type="button" class="dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
                 <span data-dropdown-label>Year</span>
-                <i
-                  class="icon"
-                  data-icon="chevron-down"
-                  aria-hidden="true"
-                ></i>
+                <i class="icon" data-icon="chevron-down" aria-hidden="true"></i>
               </button>
-
               <ul class="dropdown__menu" role="listbox" hidden></ul>
             </div>
-          </header>
-
-          <div
-            class="chart chart--line"
-            data-chart="amount-collected"
-            role="img"
-            aria-label="Total amount collected over time"
-          ></div>
-        </section>
-
-        <div class="dash-bottom">
-          <section
-            class="chart-card chart-card--donut"
-            aria-labelledby="paid-title"
-          >
-            <header class="chart-card__header">
-              <h2
-                class="chart-card__title chart-card__title--sm"
-                id="paid-title"
-              >
-                Paid vs Unpaid
-              </h2>
-
-              <div
-                class="dropdown dropdown--sm"
-                data-dropdown
-                id="paid-range"
-              >
-                <button
-                  type="button"
-                  class="dropdown__toggle"
-                  aria-haspopup="listbox"
-                  aria-expanded="false"
-                >
-                  <span data-dropdown-label>This Week</span>
-                  <i
-                    class="icon"
-                    data-icon="chevron-down"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-
-                <ul class="dropdown__menu" role="listbox" hidden></ul>
-              </div>
             </header>
+            <div class="chart chart--line" data-chart="amount-collected" role="img" aria-label="Total amount collected over time"></div>
+          </section>
 
-            <p class="donut-card__total" data-stat="paid-total"></p>
-            <p class="donut-card__sub" data-stat="orders"></p>
-
-            <div class="donut-card__body">
-              <div
-                class="chart chart--donut"
-                data-chart="paid-unpaid"
-                role="img"
-                aria-label="Paid versus unpaid"
-              ></div>
-
-              <ul class="legend legend--sm">
-                <li>
-                  <span class="legend__dot legend__dot--paid"></span>
-                  Paid
-                </li>
-                <li>
-                  <span class="legend__dot legend__dot--unpaid"></span>
-                  Unpaid
-                </li>
-              </ul>
+          <div class="dash-bottom">
+            <section class="chart-card chart-card--donut" aria-labelledby="paid-title">
+              <header class="chart-card__header">
+                <h2 class="chart-card__title chart-card__title--sm" id="paid-title">Paid vs Unpaid</h2>
+                <div class="dropdown dropdown--sm" data-dropdown id="paid-range">
+              <button type="button" class="dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                <span data-dropdown-label>This Week</span>
+                <i class="icon" data-icon="chevron-down" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown__menu" role="listbox" hidden></ul>
             </div>
-          </section>
-
-          <section
-            class="chart-card chart-card--bars"
-            aria-labelledby="stats-title"
-          >
-            <header class="chart-card__header chart-card__header--start">
-              <div>
-                <p class="chart-card__kicker">Statistics</p>
-                <h2
-                  class="chart-card__title chart-card__title--sm"
-                  id="stats-title"
-                >
-                  Apprehended vs Impounded
-                </h2>
+              </header>
+              <p class="donut-card__total" data-stat="paid-total"></p>
+              <p class="donut-card__sub" data-stat="orders"></p>
+              <div class="donut-card__body">
+                <div class="chart chart--donut" data-chart="paid-unpaid" role="img" aria-label="Paid versus unpaid"></div>
+                <ul class="legend legend--sm">
+                  <li><span class="legend__dot legend__dot--paid"></span>Paid</li>
+                  <li><span class="legend__dot legend__dot--unpaid"></span>Unpaid</li>
+                </ul>
               </div>
+            </section>
 
-              <ul class="legend">
-                <li>
-                  <span
-                    class="legend__dot legend__dot--apprehended"
-                  ></span>
-                  Apprehended
-                </li>
-                <li>
-                  <span class="legend__dot legend__dot--impounded"></span>
-                  Impounded
-                </li>
-              </ul>
-            </header>
+            <section class="chart-card chart-card--bars" aria-labelledby="stats-title">
+              <header class="chart-card__header chart-card__header--start">
+                <div>
+                  <p class="chart-card__kicker">Statistics</p>
+                  <h2 class="chart-card__title chart-card__title--sm" id="stats-title">Apprehended and Impounded</h2>
+                </div>
+                <ul class="legend">
+                  <li><span class="legend__dot legend__dot--apprehended"></span>Apprehended</li>
+                  <li><span class="legend__dot legend__dot--impounded"></span>Impounded</li>
+                </ul>
+              </header>
+              <div class="chart chart--bars" data-chart="apprehended-impounded" role="img" aria-label="Apprehended versus impounded by year"></div>
+            </section>
+          </div>
+        </div>
 
-            <div
-              class="chart chart--bars"
-              data-chart="apprehended-impounded"
-              role="img"
-              aria-label="Apprehended versus impounded by year"
-            ></div>
+        <div class="dash-view" id="view-records" data-dash-view="records" hidden>
+          <section class="records-stats" aria-label="Records summary">
+            <article class="stat-card">
+              <h2 class="stat-card__label">Total Operators</h2>
+              <p class="stat-card__value" data-stat="operators"></p>
+            </article>
+            <article class="stat-card">
+              <h2 class="stat-card__label">Total Franchises</h2>
+              <p class="stat-card__value" data-stat="franchises"></p>
+            </article>
+            <article class="stat-card">
+              <h2 class="stat-card__label">Total Units</h2>
+              <p class="stat-card__value" data-stat="units"></p>
+            </article>
+            <article class="stat-card stat-card--wide">
+              <h2 class="stat-card__label">Active Units</h2>
+              <p class="stat-card__value" data-stat="active-units"></p>
+            </article>
+            <article class="stat-card stat-card--half">
+              <h2 class="stat-card__label">Expired Franchises</h2>
+              <p class="stat-card__value" data-stat="expired-franchises"></p>
+            </article>
+            <article class="stat-card stat-card--half">
+              <h2 class="stat-card__label">Pending Renewal</h2>
+              <p class="stat-card__value" data-stat="pending-renewal"></p>
+            </article>
           </section>
+
+          <div class="dash-grid">
+            <section class="chart-card" aria-labelledby="denomination-title">
+              <header class="chart-card__header">
+                <h2 class="chart-card__title" id="denomination-title">Units by Denomination</h2>
+              </header>
+              <div class="chart chart--columns" data-chart="units-by-denomination" role="img" aria-label="Units by denomination"></div>
+              <ul class="legend legend--keys" data-legend="units-by-denomination"></ul>
+            </section>
+
+            <section class="chart-card" aria-labelledby="route-title">
+              <header class="chart-card__header">
+                <h2 class="chart-card__title" id="route-title">Units by Route</h2>
+              </header>
+              <div class="chart chart--hbars" data-chart="units-by-route" role="img" aria-label="Units by route"></div>
+            </section>
+
+            <section class="chart-card chart-card--status" aria-labelledby="status-title">
+              <header class="chart-card__header">
+                <h2 class="chart-card__title" id="status-title">Franchise Status</h2>
+              </header>
+              <div class="status-card__body">
+                <div class="chart chart--donut-lg" data-chart="franchise-status" role="img" aria-label="Franchise status"></div>
+                <ul class="legend legend--inline" data-legend="franchise-status"></ul>
+              </div>
+            </section>
+
+            <section class="chart-card" aria-labelledby="trend-title">
+              <header class="chart-card__header">
+                <h2 class="chart-card__title" id="trend-title">Unit Expiration Trend</h2>
+                <div class="dropdown dropdown--pill" data-dropdown id="expiration-range">
+                  <button type="button" class="dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                    <span data-dropdown-label>Year</span>
+                    <i class="icon" data-icon="chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown__menu" role="listbox" hidden></ul>
+                </div>
+              </header>
+              <div class="chart chart--line" data-chart="unit-expiration" role="img" aria-label="Unit expirations over time"></div>
+            </section>
+          </div>
         </div>
       </main>
     </div>
 
-    <aside
-      class="history"
-      id="history"
-      aria-labelledby="history-title"
-    >
+    <aside class="history" id="history" aria-labelledby="history-title">
       <h2 class="history__title" id="history-title">History</h2>
       <ol class="history__list" data-history-list></ol>
     </aside>
